@@ -181,6 +181,7 @@ describe('DataStore Modules', () => {
       mockStore.set('fcmCredentials', mockCredentials);
       const retrieved = FCMDataStore.getCredentials();
       expect(ElectronStore.get).toHaveBeenCalledWith('fcmCredentials');
+      expect(retrieved).toEqual(mockCredentials);
     });
 
     it('should clear FCM credentials', () => {
